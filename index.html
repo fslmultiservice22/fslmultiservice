@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FSL Multiservice S.r.l.s. offre servizi di supporto alle imprese e logistica accessoria in Italia." />
+  <meta name="theme-color" content="#13304a" />
+  <title>FSL Multiservice S.r.l.s. | Servizi per le imprese</title>
+  <style>
+    :root {
+      --navy: #13304a;
+      --navy-deep: #0a1c2b;
+      --ink: #193044;
+      --cream: #f7f5f0;
+      --paper: #ffffff;
+      --sand: #e8e0d2;
+      --orange: #d96f32;
+      --orange-soft: #f6e4d7;
+      --line: #d9d2c5;
+      --muted: #62707a;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+    a { color: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position: absolute; left: 12px; top: -48px; background: var(--paper); color: var(--navy); padding: 10px 14px; z-index: 10; }
+    .skip-link:focus { top: 12px; }
+
+    header { background: var(--navy-deep); color: #fff; }
+    .topbar { display: flex; gap: 18px; justify-content: flex-end; padding: 9px 0; color: #dae5ec; font-size: .86rem; }
+    .topbar a { text-decoration: none; }
+    .topbar a:hover, nav a:hover { text-decoration: underline; }
+    .nav { border-top: 1px solid rgba(255,255,255,.16); display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 78px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid #efb38b; border-radius: 50%; color: #ffd3b9; font-weight: 800; letter-spacing: .05em; }
+    .brand strong { display: block; font-size: 1.05rem; letter-spacing: .02em; }
+    .brand span { display: block; color: #b7c7d2; font-size: .79rem; }
+    nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    nav a { color: #dbe5ea; font-size: .92rem; text-decoration: none; }
+
+    .hero { color: #fff; padding: 96px 0 88px; background: linear-gradient(118deg, rgba(10,28,43,.97), rgba(19,48,74,.88)), radial-gradient(circle at 85% 15%, rgba(217,111,50,.35), transparent 36%); }
+    .eyebrow { margin: 0 0 16px; color: #ffd1b5; font-size: .76rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { max-width: 800px; margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.55rem, 6vw, 5rem); line-height: 1.02; letter-spacing: -.035em; }
+    .hero p { max-width: 690px; margin: 26px 0 0; color: #e2ebef; font-size: 1.16rem; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .button { display: inline-block; border: 1px solid transparent; border-radius: 8px; padding: 13px 19px; font-weight: 700; text-decoration: none; }
+    .button.primary { background: var(--orange); color: #fff; }
+    .button.secondary { border-color: rgba(255,255,255,.6); color: #fff; }
+    .hero-note { display: flex; gap: 10px; align-items: flex-start; max-width: 690px; margin-top: 28px; color: #c4d3dc; font-size: .88rem; }
+    .hero-note::before { content: '•'; color: #f5a46e; font-size: 1.4rem; line-height: .8; }
+
+    section { padding: 76px 0; }
+    .section-label { color: var(--orange); font-size: .8rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    h2 { max-width: 700px; margin: 10px 0 16px; color: var(--navy); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; letter-spacing: -.025em; }
+    .lede { max-width: 720px; margin: 0; color: var(--muted); font-size: 1.08rem; }
+
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+    .service { min-height: 225px; padding: 27px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+    .service-number { color: var(--orange); font-weight: 800; font-size: .82rem; letter-spacing: .08em; }
+    .service h3 { margin: 28px 0 9px; color: var(--navy); font-size: 1.18rem; line-height: 1.22; }
+    .service p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+    .company { background: #ebe6dd; }
+    .company-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+    .statement { margin: 0; border-left: 3px solid var(--orange); padding: 4px 0 4px 22px; color: var(--navy); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.45rem, 3vw, 2.15rem); line-height: 1.25; }
+    .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin: 30px 0 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .fact { min-height: 98px; padding: 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .fact dt { color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .fact dd { margin: 7px 0 0; color: var(--navy); font-weight: 700; font-size: .94rem; }
+
+    .territory { background: var(--navy); color: #fff; }
+    .territory h2 { color: #fff; }
+    .territory .lede { color: #c7d4dc; }
+    .territory-box { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+    .territory-item { border-top: 1px solid rgba(255,255,255,.3); padding-top: 18px; }
+    .territory-item h3 { color: #ffd4ba; margin: 0 0 6px; font-size: 1rem; }
+    .territory-item p { margin: 0; color: #d5e0e5; }
+
+    .projects { background: var(--orange-soft); }
+    .project-card { display: grid; grid-template-columns: 1.25fr .75fr; gap: 26px; margin-top: 34px; padding: 31px; background: var(--paper); border: 1px solid #ebc9b4; border-radius: var(--radius); }
+    .project-card h3 { margin: 0 0 10px; color: var(--navy); font-size: 1.35rem; }
+    .project-card p { margin: 0; color: var(--muted); }
+    .project-status { align-self: center; padding: 18px; background: #f8eee7; border-radius: 12px; color: #79401f; font-size: .9rem; }
+    .project-status strong { display: block; margin-bottom: 4px; color: #8f451c; }
+
+    .contact { padding-bottom: 94px; }
+    .contact-card { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; margin-top: 32px; padding: 32px; background: var(--navy-deep); border-radius: var(--radius); color: #fff; }
+    .contact-card h2 { color: #fff; margin: 0 0 8px; font-size: clamp(1.65rem, 3vw, 2.3rem); }
+    .contact-card p { max-width: 630px; margin: 0; color: #c6d4dc; }
+    .contact-details { display: grid; gap: 9px; padding: 15px 0 0; color: #edf5f8; font-size: .95rem; }
+    .contact-details a { color: #fff; }
+
+    footer { padding: 27px 0; color: #d4e0e7; background: #07141e; font-size: .85rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-inner p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 30px, 1120px); }
+      .topbar { justify-content: flex-start; flex-wrap: wrap; }
+      .nav { padding: 15px 0; align-items: flex-start; flex-direction: column; }
+      nav { gap: 12px; }
+      .hero { padding: 72px 0 64px; }
+      section { padding: 58px 0; }
+      .service-grid, .company-grid, .territory-box, .project-card, .contact-card { grid-template-columns: 1fr; }
+      .service { min-height: auto; }
+      .contact-card { align-items: start; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header>
+    <div class="container topbar">
+      <a href="mailto:fslmultiservice@gmail.com">fslmultiservice@gmail.com</a>
+      <a href="tel:+393756506230">+39 375 650 6230</a>
+    </div>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="FSL Multiservice, home">
+        <span class="brand-mark" aria-hidden="true">FSL</span>
+        <span><strong>FSL Multiservice S.r.l.s.</strong><span>Servizi per le imprese · Italia</span></span>
+      </a>
+      <nav aria-label="Navigazione principale">
+        <a href="#servizi">Servizi</a>
+        <a href="#azienda">Azienda</a>
+        <a href="#territorio">Territorio</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto">
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="eyebrow">FSL Multiservice S.r.l.s. · Milano</p>
+        <h1>Supporto operativo per le imprese, con presenza concreta sul territorio.</h1>
+        <p>Forniamo servizi di supporto alle imprese e logistica accessoria in Italia: interventi di sgombero, movimentazione di beni, supporto per allestimenti fieristici e recupero/rimozione di materiali.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#contatti">Richiedi informazioni</a>
+          <a class="button secondary" href="#servizi">Scopri i servizi</a>
+        </div>
+        <p class="hero-note">Operiamo sul territorio italiano. Non offriamo servizi di trasporto merci internazionale né servizi finanziari tramite questo sito aziendale.</p>
+      </div>
+    </section>
+
+    <section id="servizi">
+      <div class="container">
+        <div class="section-label">Attività aziendale</div>
+        <h2>Servizi pratici, organizzati attorno alle necessità operative dell'impresa.</h2>
+        <p class="lede">Le attività sono svolte su richiesta del cliente e sono orientate al supporto operativo, alla gestione di spazi e alla logistica accessoria in Italia.</p>
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-number">01</div>
+            <h3>Sgombero e gestione degli spazi</h3>
+            <p>Supporto per sgombero di cantine, soffitte, garage e spazi aziendali, con organizzazione del materiale e rimozione dei beni da conferire.</p>
+          </article>
+          <article class="service">
+            <div class="service-number">02</div>
+            <h3>Movimentazione e recupero beni</h3>
+            <p>Attività di movimentazione interna e supporto logistico accessorio per beni e materiali, inclusi recupero e rimozione secondo le esigenze del cliente.</p>
+          </article>
+          <article class="service">
+            <div class="service-number">03</div>
+            <h3>Allestimenti fieristici</h3>
+            <p>Supporto per montaggio e smontaggio di stand e strutture per fiere, eventi e iniziative commerciali, coordinato con le esigenze operative del committente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="company" id="azienda">
+      <div class="container company-grid">
+        <div>
+          <div class="section-label">Chi siamo</div>
+          <h2>Una società italiana focalizzata sul supporto operativo alle imprese.</h2>
+          <p class="statement">Lavoriamo con un approccio diretto, trasparente e proporzionato alle attività richieste, mettendo al centro affidabilità, comunicazione e corretto coordinamento degli interventi.</p>
+        </div>
+        <div>
+          <dl class="facts">
+            <div class="fact"><dt>Ragione sociale</dt><dd>FSL Multiservice S.r.l.s.</dd></div>
+            <div class="fact"><dt>Partita IVA</dt><dd>09276360964</dd></div>
+            <div class="fact"><dt>Sede</dt><dd>Via Cadibona 9, 20137 Milano</dd></div>
+            <div class="fact"><dt>Operatività</dt><dd>Italia</dd></div>
+            <div class="fact"><dt>Costituzione</dt><dd>23 novembre 2015</dd></div>
+            <div class="fact"><dt>Contatto</dt><dd>fslmultiservice@gmail.com</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="territory" id="territorio">
+      <div class="container">
+        <div class="section-label">Ambito operativo</div>
+        <h2>Servizi organizzati per attività in Italia.</h2>
+        <p class="lede">FSL Multiservice svolge le proprie attività nel contesto italiano, attraverso contatti diretti, richieste di informazioni e relazioni commerciali sviluppate sul territorio.</p>
+        <div class="territory-box">
+          <div class="territory-item"><h3>Come riceviamo le richieste</h3><p>I clienti possono contattarci tramite email, telefono e relazioni dirette per descrivere le necessità operative e richiedere un confronto.</p></div>
+          <div class="territory-item"><h3>Cosa non offriamo</h3><p>Non svolgiamo trasporto internazionale di merci. Questo sito non offre servizi di pagamento, intermediazione finanziaria o consulenza finanziaria.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="progetti">
+      <div class="container">
+        <div class="section-label">Progetti tecnologici</div>
+        <h2>AgentPay è un progetto separato di sviluppo software.</h2>
+        <p class="lede">Il progetto AgentPay viene presentato su un sito distinto ed è dedicato allo sviluppo di soluzioni software. Non descrive l'offerta commerciale dei servizi operativi di FSL Multiservice e non è il canale di vendita di questa attività aziendale.</p>
+        <div class="project-card">
+          <div>
+            <h3>Separazione chiara tra attività e progetto</h3>
+            <p>Questa pagina rappresenta esclusivamente FSL Multiservice e i servizi aziendali indicati sopra. Eventuali iniziative digitali vengono valutate e sviluppate in modo separato, con i necessari requisiti tecnici e autorizzativi prima di qualsiasi offerta al pubblico.</p>
+          </div>
+          <div class="project-status"><strong>Stato AgentPay</strong>Progetto tecnologico in sviluppo separato dall'attività commerciale illustrata su questo sito.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contatti">
+      <div class="container">
+        <div class="section-label">Contatti</div>
+        <div class="contact-card">
+          <div>
+            <h2>Parliamo delle tue esigenze operative.</h2>
+            <p>Per informazioni sui servizi FSL Multiservice, contattaci direttamente. Valuteremo la richiesta e risponderemo con le indicazioni operative appropriate.</p>
+            <div class="contact-details">
+              <span>Email: <a href="mailto:fslmultiservice@gmail.com">fslmultiservice@gmail.com</a></span>
+              <span>Telefono: <a href="tel:+393756506230">+39 375 650 6230</a></span>
+              <span>Sede: Via Cadibona 9, 20137 Milano</span>
+            </div>
+          </div>
+          <a class="button primary" href="mailto:fslmultiservice@gmail.com?subject=Richiesta%20informazioni%20FSL%20Multiservice">Scrivi un'email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 FSL Multiservice S.r.l.s. · P. IVA 09276360964</p>
+      <p>Sito aziendale informativo · Italia</p>
+    </div>
+  </footer>
+</body>
+</html>
